@@ -1,0 +1,95 @@
+// =============================================================================
+// COLOR TOKENS - Tailark Pro Design System
+// =============================================================================
+// Generated from design.json
+// Includes: Neutral palette, semantic colors, brand colors
+// =============================================================================
+
+// CSS Custom Properties (for runtime theming)
+:root {
+  // Neutral Colors
+  --color-neutral-50: #F8FAFC;
+  --color-neutral-100: #F1F5F9;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-300: #CBD5E1;
+  --color-neutral-400: #94A3B8;
+  --color-neutral-500: #64748B;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1E293B;
+  --color-neutral-900: #0F172A;
+
+  // Semantic Colors
+  --color-bg: #FFFFFF;
+  --color-bg-secondary: #F9FAFB;
+  --color-fg: #0F172A;
+  --color-muted: #64748B;
+  --color-muted-lighter: #94A3B8;
+  --color-border: #E2E8F0;
+  --color-border-dark: #334155;
+
+  // Brand Colors
+  --color-primary: #2563EB;
+  --color-primary-hover: #1D4ED8;
+  --color-accent-teal: #14B8A6;
+  --color-accent-purple: #A855F7;
+}
+
+// SCSS Variables (for compile-time optimization)
+// Neutral Scale
+$neutral-50: #F8FAFC;
+$neutral-100: #F1F5F9;
+$neutral-200: #E2E8F0;
+$neutral-300: #CBD5E1;
+$neutral-400: #94A3B8;
+$neutral-500: #64748B;
+$neutral-600: #475569;
+$neutral-700: #334155;
+$neutral-800: #1E293B;
+$neutral-900: #0F172A;
+
+// Semantic Colors
+$bg: #FFFFFF;
+$bg-secondary: #F9FAFB;
+$fg: #0F172A;
+$muted: #64748B;
+$muted-lighter: #94A3B8;
+$border: #E2E8F0;
+$border-dark: #334155;
+
+// Brand Colors
+$primary: #2563EB;
+$primary-hover: #1D4ED8;
+$accent-teal: #14B8A6;
+$accent-purple: #A855F7;
+
+// Color Maps for programmatic access
+$neutral-colors: (
+  '50': $neutral-50,
+  '100': $neutral-100,
+  '200': $neutral-200,
+  '300': $neutral-300,
+  '400': $neutral-400,
+  '500': $neutral-500,
+  '600': $neutral-600,
+  '700': $neutral-700,
+  '800': $neutral-800,
+  '900': $neutral-900,
+);
+
+$semantic-colors: (
+  'background': $bg,
+  'background-secondary': $bg-secondary,
+  'foreground': $fg,
+  'muted': $muted,
+  'muted-lighter': $muted-lighter,
+  'border': $border,
+  'border-dark': $border-dark,
+);
+
+$brand-colors: (
+  'primary': $primary,
+  'primary-hover': $primary-hover,
+  'accent-teal': $accent-teal,
+  'accent-purple': $accent-purple,
+);

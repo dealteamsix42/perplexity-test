@@ -1,0 +1,210 @@
+// =============================================================================
+// TYPOGRAPHY COMPONENT - Tailark Pro Design System
+// =============================================================================
+// Heading and text utility classes
+// =============================================================================
+
+@import '../tokens/typography';
+@import '../tokens/colors';
+
+// Headings
+.heading {
+  font-weight: $font-semibold;
+  color: $fg;
+  line-height: $leading-snug;
+
+  &--h1 {
+    @include hero-responsive;
+  }
+
+  &--h2 {
+    @include text-3xl;
+  }
+
+  &--h3 {
+    @include text-2xl;
+  }
+
+  &--h4 {
+    @include text-xl;
+  }
+
+  &--h5 {
+    @include text-lg;
+    font-weight: $font-medium;
+  }
+
+  &--h6 {
+    @include text-base;
+    font-weight: $font-medium;
+  }
+}
+
+// Body Text
+.text {
+  color: $fg;
+  line-height: $leading-loose;
+
+  &--xs {
+    @include text-xs;
+  }
+
+  &--sm {
+    @include text-sm;
+  }
+
+  &--base {
+    @include text-base;
+  }
+
+  &--lg {
+    @include text-lg;
+  }
+
+  &--xl {
+    @include text-xl;
+  }
+}
+
+// Text Colors
+.text--muted {
+  color: $muted;
+}
+
+.text--muted-lighter {
+  color: $muted-lighter;
+}
+
+.text--primary {
+  color: $primary;
+}
+
+.text--white {
+  color: white;
+}
+
+// Text Weights
+.text--light {
+  font-weight: $font-light;
+}
+
+.text--normal {
+  font-weight: $font-normal;
+}
+
+.text--medium {
+  font-weight: $font-medium;
+}
+
+.text--semibold {
+  font-weight: $font-semibold;
+}
+
+.text--bold {
+  font-weight: $font-bold;
+}
+
+// Text Alignment
+.text--left {
+  text-align: left;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
+// Text Transform
+.text--uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text--lowercase {
+  text-transform: lowercase;
+}
+
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+// Text Balance (for headings)
+.text--balance {
+  text-wrap: balance;
+}
+
+// Label/Caption
+.label {
+  @include text-xs;
+  color: $muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: $font-medium;
+}
+
+// Link Styles
+.link {
+  color: $primary;
+  text-decoration: none;
+  @include link-hover-transition;
+
+  &:hover {
+    color: $primary-hover;
+    text-decoration: underline;
+  }
+}
+
+// Prose (for rich text content)
+.prose {
+  color: $fg;
+  line-height: $leading-loose;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-semibold;
+    color: $fg;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    line-height: $leading-snug;
+  }
+
+  h1 { @include text-3xl; }
+  h2 { @include text-2xl; }
+  h3 { @include text-xl; }
+  h4 { @include text-lg; }
+
+  p {
+    margin-bottom: 1.5em;
+  }
+
+  a {
+    @extend .link;
+  }
+
+  ul, ol {
+    margin-bottom: 1.5em;
+    padding-left: 2em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  strong {
+    font-weight: $font-semibold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  code {
+    font-family: 'Courier New', monospace;
+    background-color: $neutral-100;
+    padding: 0.125rem 0.25rem;
+    border-radius: $radius-sm;
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,49 @@
+// =============================================================================
+// CONTAINER COMPONENT - Tailark Pro Design System
+// =============================================================================
+// Wraps content with max-width and horizontal padding
+// Usage: <div class="container">...</div>
+// =============================================================================
+
+@import '../tokens/spacing';
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $section-padding-x;
+  padding-right: $section-padding-x;
+
+  // Variant: Narrow container
+  &--narrow {
+    max-width: 60rem; // 960px
+  }
+
+  // Variant: Wide container
+  &--wide {
+    max-width: 100rem; // 1600px
+  }
+
+  // Variant: Full width
+  &--full {
+    max-width: none;
+  }
+
+  // Variant: No padding
+  &--no-padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // Responsive padding adjustments
+  @media (min-width: 640px) {
+    padding-left: $space-8;
+    padding-right: $space-8;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: $space-12;
+    padding-right: $space-12;
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "version": "1.0.0",
+  "description": "Platform-specific export settings for social media assets",
+  "presets": {
+    "linkedin": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1200,
+        "height": 627
+      },
+      "quality": 100,
+      "suffix": "-linkedin",
+      "colorProfile": "sRGB",
+      "notes": "Professional case study cards, data-driven content"
+    },
+    "twitter": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "quality": 95,
+      "suffix": "-twitter",
+      "colorProfile": "sRGB",
+      "notes": "Punchy metric highlights, quick wins"
+    },
+    "instagram-post": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1080,
+        "height": 1080
+      },
+      "quality": 95,
+      "suffix": "-instagram",
+      "colorProfile": "sRGB",
+      "notes": "Bold gradient posts with large metrics"
+    },
+    "instagram-portrait": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1080,
+        "height": 1350
+      },
+      "quality": 95,
+      "suffix": "-instagram-portrait",
+      "colorProfile": "sRGB",
+      "notes": "Vertical posts for feed"
+    },
+    "instagram-story": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1080,
+        "height": 1920
+      },
+      "quality": 95,
+      "suffix": "-story",
+      "colorProfile": "sRGB",
+      "notes": "Full-screen vertical stories with 15-20px safe margins"
+    },
+    "facebook": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1200,
+        "height": 628
+      },
+      "quality": 95,
+      "suffix": "-facebook",
+      "colorProfile": "sRGB",
+      "notes": "Testimonial cards, keep text under 20% of image area"
+    },
+    "linkedin-carousel": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1200,
+        "height": 1500
+      },
+      "quality": 100,
+      "suffix": "-linkedin-carousel",
+      "colorProfile": "sRGB",
+      "notes": "Multi-slide carousel for case studies"
+    },
+    "twitter-header": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1500,
+        "height": 500
+      },
+      "quality": 95,
+      "suffix": "-twitter-header",
+      "colorProfile": "sRGB",
+      "notes": "Profile header image"
+    },
+    "email-600": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 600,
+        "height": 800
+      },
+      "quality": 85,
+      "suffix": "-email",
+      "colorProfile": "sRGB",
+      "notes": "Email-optimized cards, responsive width"
+    },
+    "og-image": {
+      "format": "PNG",
+      "scale": 2,
+      "dimensions": {
+        "width": 1200,
+        "height": 630
+      },
+      "quality": 95,
+      "suffix": "-og",
+      "colorProfile": "sRGB",
+      "notes": "Open Graph meta image for link previews"
+    }
+  },
+  "exportSettings": {
+    "optimization": {
+      "png": {
+        "compression": "best",
+        "interlaced": false
+      },
+      "jpg": {
+        "quality": 90,
+        "progressive": true
+      }
+    },
+    "namingConvention": "[component-name][suffix]_[timestamp]",
+    "outputDirectory": "./output/social-media/",
+    "organizationByPlatform": true
+  }
+}

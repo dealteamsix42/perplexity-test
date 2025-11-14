@@ -1,0 +1,52 @@
+// =============================================================================
+// GRADIENT TOKENS - Tailark Pro Design System
+// =============================================================================
+// Premium dark gradients for case study cards
+// =============================================================================
+
+:root {
+  // Gradient stop colors
+  --gradient-stop-1: #001A33;
+  --gradient-stop-2: #1E1B4B;
+  --gradient-stop-3: #2D1B69;
+  --gradient-stop-4: #0D3A3A;
+  --gradient-stop-5: #1E3A3A;
+  --gradient-stop-6: #1E293B;
+}
+
+// Premium Dark Purple-Blue Gradient
+// Usage: Case study cards, premium content sections
+$gradient-dark-purple-blue: linear-gradient(135deg, #001A33 0%, #1E1B4B 50%, #2D1B69 100%);
+
+// Premium Dark Teal-Navy Gradient
+// Usage: Alternative dark card gradient
+$gradient-dark-teal-navy: linear-gradient(135deg, #0D3A3A 0%, #1E3A3A 50%, #1E293B 100%);
+
+// Gradient map for programmatic access
+$gradients: (
+  'dark-purple-blue': $gradient-dark-purple-blue,
+  'dark-teal-navy': $gradient-dark-teal-navy,
+);
+
+// Gradient Mixins
+@mixin gradient-dark-purple-blue {
+  background: $gradient-dark-purple-blue;
+}
+
+@mixin gradient-dark-teal-navy {
+  background: $gradient-dark-teal-navy;
+}
+
+// Gradient with mask effect (creates depth)
+@mixin gradient-with-mask($gradient) {
+  background: $gradient;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 25%, rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,90 @@
+// =============================================================================
+// SECTION COMPONENT - Tailark Pro Design System
+// =============================================================================
+// Full-width section wrapper with vertical spacing
+// Usage: <section class="section">...</section>
+// =============================================================================
+
+@import '../tokens/spacing';
+@import '../tokens/colors';
+
+.section {
+  width: 100%;
+  @include section-padding;
+
+  // Background Variants
+  &--bg-white {
+    background-color: $bg;
+  }
+
+  &--bg-muted {
+    background-color: $bg-secondary;
+  }
+
+  &--bg-transparent {
+    background-color: transparent;
+  }
+
+  // Spacing Variants
+  &--spacing-sm {
+    padding-top: $section-padding-y-mobile;
+    padding-bottom: $section-padding-y-mobile;
+  }
+
+  &--spacing-lg {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    @media (min-width: 1024px) {
+      padding-top: 10rem;
+      padding-bottom: 10rem;
+    }
+  }
+
+  &--no-spacing-top {
+    padding-top: 0;
+  }
+
+  &--no-spacing-bottom {
+    padding-bottom: 0;
+  }
+}
+
+// Section Header (for headings and subheadings)
+.section__header {
+  text-align: center;
+  margin-bottom: $space-12;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 1024px) {
+    margin-bottom: $space-16;
+  }
+}
+
+.section__heading {
+  font-size: $text-3xl;
+  font-weight: $font-semibold;
+  line-height: $leading-snug;
+  color: $fg;
+  margin-bottom: $space-4;
+
+  @media (min-width: 640px) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: $text-5xl;
+    line-height: $leading-tight;
+  }
+}
+
+.section__subheading {
+  font-size: $text-lg;
+  line-height: $leading-extra-loose;
+  color: $muted;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}

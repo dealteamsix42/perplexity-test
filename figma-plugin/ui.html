@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 16px;
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    p {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .checkbox-item label {
+      font-size: 13px;
+      color: #334155;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px 16px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    button:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    button.secondary {
+      background: #f1f5f9;
+      color: #0f172a;
+      margin-top: 8px;
+    }
+
+    button.secondary:hover {
+      background: #e2e8f0;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-input-label {
+      display: block;
+      padding: 12px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      margin-bottom: 16px;
+    }
+
+    .file-input-label:hover {
+      border-color: #2563eb;
+    }
+
+    .file-name {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 8px;
+    }
+
+    .status {
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 12px;
+      display: none;
+    }
+
+    .status.success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #10b981;
+      display: block;
+    }
+
+    .status.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+      display: block;
+    }
+
+    .status.info {
+      background: #dbeafe;
+      color: #1e40af;
+      border: 1px solid #3b82f6;
+      display: block;
+    }
+
+    .progress {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      padding: 8px;
+      background: #f8fafc;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .results-detail {
+      margin-top: 16px;
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 6px;
+      font-size: 11px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .results-detail h3 {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .results-detail .result-item {
+      margin-bottom: 4px;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+  <h1>Design System Import</h1>
+  <p>Load your figma-variables.json file to import the complete design system.</p>
+
+  <div class="section">
+    <label for="file-input" class="file-input-label">
+      <div>📁 Click to select JSON file</div>
+      <div class="file-name" id="file-name">No file selected</div>
+    </label>
+    <input type="file" id="file-input" accept=".json" />
+  </div>
+
+  <div class="section">
+    <div class="section-title">Import Options</div>
+    <div class="checkbox-group">
+      <div class="checkbox-item">
+        <input type="checkbox" id="import-variables" checked />
+        <label for="import-variables">Variables (Colors, Spacing, Typography, etc.)</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="import-text-styles" checked />
+        <label for="import-text-styles">Text Styles</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="import-effects" checked />
+        <label for="import-effects">Effect Styles (Shadows)</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="import-gradients" checked />
+        <label for="import-gradients">Gradient Styles</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="import-components" checked />
+        <label for="import-components">Components (Cards, Buttons, etc.)</label>
+      </div>
+      <div class="checkbox-item">
+        <input type="checkbox" id="import-templates" checked />
+        <label for="import-templates">Social Media Templates</label>
+      </div>
+    </div>
+  </div>
+
+  <button id="sync-button" disabled>Import to Figma</button>
+  <button class="secondary" id="cancel-button">Cancel</button>
+
+  <div id="progress" class="progress" style="display: none;"></div>
+  <div id="status" class="status"></div>
+
+  <div id="stats" class="stats" style="display: none;">
+    <div class="stat">
+      <div class="stat-value" id="created-count">0</div>
+      <div class="stat-label">Created</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="updated-count">0</div>
+      <div class="stat-label">Updated</div>
+    </div>
+  </div>
+
+  <div id="results-detail" class="results-detail" style="display: none;"></div>
+
+  <script>
+    const fileInput = document.getElementById('file-input');
+    const fileName = document.getElementById('file-name');
+    const syncButton = document.getElementById('sync-button');
+    const cancelButton = document.getElementById('cancel-button');
+    const status = document.getElementById('status');
+    const progress = document.getElementById('progress');
+    const stats = document.getElementById('stats');
+    const resultsDetail = document.getElementById('results-detail');
+    let tokenData = null;
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        fileName.textContent = file.name;
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          try {
+            tokenData = JSON.parse(event.target.result);
+            syncButton.disabled = false;
+            showStatus('File loaded successfully!', 'success');
+          } catch (error) {
+            showStatus('Error parsing JSON: ' + error.message, 'error');
+            syncButton.disabled = true;
+          }
+        };
+        reader.readAsText(file);
+      }
+    });
+
+    syncButton.addEventListener('click', () => {
+      if (tokenData) {
+        syncButton.disabled = true;
+        showStatus('Importing design system...', 'info');
+        progress.style.display = 'block';
+        progress.textContent = 'Starting import...';
+        stats.style.display = 'none';
+        resultsDetail.style.display = 'none';
+
+        const options = {
+          importVariables: document.getElementById('import-variables').checked,
+          importTextStyles: document.getElementById('import-text-styles').checked,
+          importEffects: document.getElementById('import-effects').checked,
+          importGradients: document.getElementById('import-gradients').checked,
+          importComponents: document.getElementById('import-components').checked,
+          importTemplates: document.getElementById('import-templates').checked
+        };
+
+        parent.postMessage({ 
+          pluginMessage: { 
+            type: 'load-tokens', 
+            tokens: tokenData,
+            options: options
+          } 
+        }, '*');
+      }
+    });
+
+    cancelButton.addEventListener('click', () => {
+      parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*');
+    });
+
+    function showStatus(message, type) {
+      status.textContent = message;
+      status.className = `status ${type}`;
+    }
+
+    // Listen for messages from plugin
+    window.onmessage = (event) => {
+      const msg = event.data.pluginMessage;
+      
+      if (msg.type === 'progress') {
+        progress.textContent = msg.message;
+      } else if (msg.type === 'sync-complete') {
+        progress.style.display = 'none';
+        showStatus(`✅ Import complete! Created: ${msg.created}, Updated: ${msg.updated}`, 'success');
+        document.getElementById('created-count').textContent = msg.created;
+        document.getElementById('updated-count').textContent = msg.updated;
+        stats.style.display = 'grid';
+        
+        // Show detailed results
+        if (msg.results) {
+          let detailHtml = '<h3>Import Details</h3>';
+          for (const [category, result] of Object.entries(msg.results)) {
+            if (result.created > 0 || result.updated > 0) {
+              detailHtml += `<div class="result-item"><strong>${category}:</strong> ${result.created} created, ${result.updated} updated</div>`;
+            }
+          }
+          resultsDetail.innerHTML = detailHtml;
+          resultsDetail.style.display = 'block';
+        }
+        
+        if (msg.errors && msg.errors.length > 0) {
+          console.error('Errors:', msg.errors);
+          detailHtml += '<div style="color: #ef4444; margin-top: 8px;"><strong>Errors:</strong><br>' + 
+            msg.errors.slice(0, 5).join('<br>') + 
+            (msg.errors.length > 5 ? '<br>...' : '') + '</div>';
+          resultsDetail.innerHTML = detailHtml;
+        }
+        
+        syncButton.disabled = false;
+      } else if (msg.type === 'sync-error') {
+        progress.style.display = 'none';
+        showStatus('❌ Error: ' + msg.error, 'error');
+        syncButton.disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>

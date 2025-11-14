@@ -1,0 +1,151 @@
+// =============================================================================
+// DARK PREMIUM CARD COMPONENT - Tailark Pro Design System
+// =============================================================================
+// High-impact case study cards with gradient backgrounds
+// Usage: <article class="card-dark">...</article>
+// =============================================================================
+
+@import '../tokens/gradients';
+@import '../tokens/colors';
+@import '../tokens/spacing';
+@import '../tokens/shadows';
+@import '../tokens/radius';
+@import '../tokens/typography';
+@import '../tokens/animations';
+
+.card-dark {
+  position: relative;
+  @include rounded-2xl;
+  padding: $card-padding;
+  @include premium-card-shadow;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+
+  // Default gradient: purple-blue
+  @include gradient-dark-purple-blue;
+
+  // Gradient variant: teal-navy
+  &--gradient-teal {
+    @include gradient-dark-teal-navy;
+  }
+
+  // Depth mask overlay
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 25%, rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Content above mask
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Card Logo
+.card-dark__logo {
+  height: 2rem;
+  width: auto;
+  max-width: 9rem;
+  margin-bottom: $space-8;
+  filter: brightness(0) invert(1); // Makes logo white
+  opacity: 0.9;
+
+  @media (min-width: 1024px) {
+    height: 2.5rem;
+    max-width: 10rem;
+  }
+}
+
+// Card Content
+.card-dark__content {
+  margin-bottom: $space-8;
+}
+
+.card-dark__title {
+  font-size: $text-2xl;
+  font-weight: $font-semibold;
+  line-height: $leading-normal;
+  margin-bottom: $space-4;
+
+  @media (min-width: 1024px) {
+    font-size: $text-3xl;
+  }
+}
+
+.card-dark__description {
+  font-size: $text-base;
+  line-height: $leading-loose;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: $space-6;
+
+  @media (min-width: 1024px) {
+    font-size: $text-lg;
+  }
+}
+
+// Metrics Section (grid at bottom)
+.card-dark__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-6;
+  margin-top: auto;
+}
+
+.card-dark__metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-dark__metric-value {
+  font-size: $text-3xl;
+  font-weight: $font-bold;
+  line-height: $leading-tight;
+  color: $accent-teal;
+  margin-bottom: $space-2;
+
+  @media (min-width: 1024px) {
+    font-size: $text-5xl;
+  }
+
+  // Variant: purple accent
+  .card-dark__metric--accent-purple & {
+    color: $accent-purple;
+  }
+}
+
+.card-dark__metric-label {
+  font-size: $text-sm;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: $font-medium;
+}
+
+// CTA Link
+.card-dark__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  color: white;
+  text-decoration: none;
+  margin-top: $space-6;
+  @include link-hover-transition;
+
+  &:hover {
+    color: $accent-teal;
+    gap: $space-3;
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

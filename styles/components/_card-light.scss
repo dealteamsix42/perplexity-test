@@ -1,0 +1,142 @@
+// =============================================================================
+// LIGHT TESTIMONIAL CARD COMPONENT - Tailark Pro Design System
+// =============================================================================
+// Clean testimonial cards with light backgrounds
+// Usage: <article class="card-light">...</article>
+// =============================================================================
+
+@import '../tokens/colors';
+@import '../tokens/spacing';
+@import '../tokens/shadows';
+@import '../tokens/radius';
+@import '../tokens/typography';
+@import '../tokens/animations';
+
+.card-light {
+  @include rounded-2xl;
+  padding: $card-padding;
+  background-color: $bg;
+  border: 1px solid $border;
+  @include card-shadow-hover;
+
+  &:hover {
+    border-color: rgba($primary, 0.2);
+  }
+}
+
+// Card Header (logo + company)
+.card-light__header {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  margin-bottom: $space-6;
+}
+
+.card-light__logo {
+  height: 2rem;
+  width: auto;
+  max-width: 6rem;
+}
+
+.card-light__company {
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  color: $fg;
+}
+
+// Quote/Testimonial
+.card-light__quote {
+  font-size: $text-lg;
+  line-height: $leading-extra-loose;
+  color: $fg;
+  margin-bottom: $space-6;
+  position: relative;
+  padding-left: $space-6;
+
+  // Quote mark
+  &::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -$space-2;
+    font-size: $text-5xl;
+    line-height: 1;
+    color: $primary;
+    opacity: 0.2;
+    font-family: Georgia, serif;
+  }
+}
+
+// Author Section
+.card-light__author {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  margin-top: $space-6;
+  padding-top: $space-6;
+  border-top: 1px solid $border;
+}
+
+.card-light__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: $neutral-200;
+}
+
+.card-light__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.card-light__author-name {
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  color: $fg;
+}
+
+.card-light__author-title {
+  font-size: $text-sm;
+  color: $muted;
+}
+
+// Metric Highlight (optional)
+.card-light__metric {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding: $space-2 $space-4;
+  background-color: rgba($accent-teal, 0.1);
+  border-radius: $radius-md;
+  margin-bottom: $space-4;
+}
+
+.card-light__metric-value {
+  font-size: $text-xl;
+  font-weight: $font-bold;
+  color: $accent-teal;
+}
+
+.card-light__metric-label {
+  font-size: $text-sm;
+  color: $muted;
+}
+
+// Variant: Compact (smaller padding)
+.card-light--compact {
+  padding: $space-6;
+
+  .card-light__quote {
+    font-size: $text-base;
+    margin-bottom: $space-4;
+  }
+}
+
+// Variant: Featured (highlighted)
+.card-light--featured {
+  border-color: $primary;
+  border-width: 2px;
+  background: linear-gradient(135deg, rgba($primary, 0.02) 0%, $bg 100%);
+}

@@ -1,0 +1,107 @@
+// =============================================================================
+// SPACING TOKENS - Tailark Pro Design System
+// =============================================================================
+// Base unit: 4px (0.25rem)
+// Layout spacing: sections, containers, grids, cards
+// =============================================================================
+
+:root {
+  // Base Unit
+  --space-base: 0.25rem; // 4px
+
+  // Spacing Scale (based on 4px unit)
+  --space-1: 0.25rem;    // 4px
+  --space-2: 0.5rem;     // 8px
+  --space-3: 0.75rem;    // 12px
+  --space-4: 1rem;       // 16px
+  --space-5: 1.25rem;    // 20px
+  --space-6: 1.5rem;     // 24px
+  --space-8: 2rem;       // 32px
+  --space-10: 2.5rem;    // 40px
+  --space-12: 3rem;      // 48px
+  --space-16: 4rem;      // 64px
+  --space-20: 5rem;      // 80px
+  --space-24: 6rem;      // 96px
+
+  // Layout Spacing
+  --space-section-y: 6rem;           // 96px desktop
+  --space-section-y-mobile: 4rem;    // 64px mobile
+  --space-section-x: 1.5rem;         // 24px
+  --container-max-width: 80rem;      // 1280px
+  --space-grid-gap: 2rem;            // 32px desktop
+  --space-grid-gap-mobile: 1rem;     // 16px mobile
+  --space-card-padding: 2rem;        // 32px
+}
+
+// SCSS Variables
+$space-base: 0.25rem;
+
+// Spacing Scale
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
+
+// Layout Spacing
+$section-padding-y: 6rem;
+$section-padding-y-mobile: 4rem;
+$section-padding-x: 1.5rem;
+$container-max-width: 80rem;
+$grid-gap: 2rem;
+$grid-gap-mobile: 1rem;
+$card-padding: 2rem;
+
+// Spacing Map
+$spacing-scale: (
+  '1': $space-1,
+  '2': $space-2,
+  '3': $space-3,
+  '4': $space-4,
+  '5': $space-5,
+  '6': $space-6,
+  '8': $space-8,
+  '10': $space-10,
+  '12': $space-12,
+  '16': $space-16,
+  '20': $space-20,
+  '24': $space-24,
+);
+
+// Responsive Section Padding Mixin
+@mixin section-padding {
+  padding-top: $section-padding-y-mobile;
+  padding-bottom: $section-padding-y-mobile;
+  padding-left: $section-padding-x;
+  padding-right: $section-padding-x;
+
+  @media (min-width: 640px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: $section-padding-y;
+    padding-bottom: $section-padding-y;
+  }
+}
+
+// Responsive Grid Gap Mixin
+@mixin grid-gap {
+  gap: $grid-gap-mobile;
+
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    gap: $grid-gap;
+  }
+}

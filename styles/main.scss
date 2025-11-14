@@ -1,0 +1,24 @@
+// =============================================================================
+// MAIN STYLESHEET - Tailark Pro Design System
+// =============================================================================
+// Complete design system implementation from design.json
+// Import this file to use the full design system
+// =============================================================================
+
+// 1. Design Tokens (Foundation)
+@import 'tokens';
+
+// 2. Components
+@import 'components';
+
+// 3. Utilities
+@import 'utilities/utilities';
+
+// =============================================================================
+// Design System Ready! 🎉
+// Usage:
+//   - Import this file in your project
+//   - Use BEM classes: .card-dark, .card-light, .btn--primary
+//   - Use utility classes: .mt-4, .flex, .gap-6
+//   - Use CSS variables: var(--color-primary), var(--text-lg)
+// =============================================================================

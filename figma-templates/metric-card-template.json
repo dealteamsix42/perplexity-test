@@ -1,0 +1,70 @@
+{
+  "name": "Metric Highlight Card Template",
+  "description": "Single metric visualization for social media engagement",
+  "version": "1.0.0",
+  "type": "component",
+  "dimensions": {
+    "square": { "width": 1080, "height": 1080 },
+    "vertical": { "width": 1080, "height": 1350 },
+    "horizontal": { "width": 1200, "height": 630 }
+  },
+  "structure": {
+    "layers": [
+      {
+        "name": "Background",
+        "type": "RECTANGLE",
+        "fills": [
+          {
+            "type": "GRADIENT_LINEAR",
+            "gradientStops": [
+              { "color": { "r": 0.051, "g": 0.227, "b": 0.227, "a": 1 }, "position": 0 },
+              { "color": { "r": 0.118, "g": 0.227, "b": 0.227, "a": 1 }, "position": 0.5 },
+              { "color": { "r": 0.118, "g": 0.161, "b": 0.231, "a": 1 }, "position": 1 }
+            ],
+            "gradientTransform": [[0.707, -0.707, 0.5], [0.707, 0.707, 0]]
+          }
+        ],
+        "cornerRadius": 24
+      },
+      {
+        "name": "Content",
+        "type": "FRAME",
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "itemSpacing": 32,
+        "children": [
+          {
+            "name": "Large Metric",
+            "type": "TEXT",
+            "characters": "99.9%",
+            "fontSize": 120,
+            "fontWeight": 700,
+            "textAlignHorizontal": "CENTER",
+            "fills": [{ "type": "SOLID", "color": { "r": 0.659, "g": 0.333, "b": 0.969 } }]
+          },
+          {
+            "name": "Context",
+            "type": "TEXT",
+            "characters": "Uptime Guarantee for Your Streaming",
+            "fontSize": 24,
+            "lineHeight": { "value": 150, "unit": "PERCENT" },
+            "textAlignHorizontal": "CENTER",
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.9 } }],
+            "width": "{{PLATFORM_WIDTH - 120}}"
+          }
+        ]
+      },
+      {
+        "name": "Brand Logo",
+        "type": "IMAGE",
+        "x": "{{PLATFORM_WIDTH - 100}}",
+        "y": 40,
+        "width": 60,
+        "height": 30,
+        "constraints": { "horizontal": "MAX", "vertical": "MIN" },
+        "placeholder": "brand-logo.svg"
+      }
+    ]
+  }
+}

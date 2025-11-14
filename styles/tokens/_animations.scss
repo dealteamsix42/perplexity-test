@@ -1,0 +1,128 @@
+// =============================================================================
+// ANIMATION TOKENS - Tailark Pro Design System
+// =============================================================================
+// Transitions, durations, and easing functions
+// =============================================================================
+
+:root {
+  // Durations
+  --anim-fast: 200ms;
+  --anim-base: 300ms;
+  --anim-slow: 500ms;
+
+  // Easing
+  --anim-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --anim-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --anim-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// SCSS Variables
+$anim-fast: 200ms;
+$anim-base: 300ms;
+$anim-slow: 500ms;
+
+$anim-easing: cubic-bezier(0.4, 0, 0.2, 1);
+$anim-ease-in: cubic-bezier(0.4, 0, 1, 1);
+$anim-ease-out: cubic-bezier(0, 0, 0.2, 1);
+$anim-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Animation Maps
+$durations: (
+  'fast': $anim-fast,
+  'base': $anim-base,
+  'slow': $anim-slow,
+);
+
+$easings: (
+  'default': $anim-easing,
+  'in': $anim-ease-in,
+  'out': $anim-ease-out,
+  'in-out': $anim-ease-in-out,
+);
+
+// Transition Mixins
+@mixin transition-fast($properties...) {
+  $transitions: ();
+  @each $prop in $properties {
+    $transitions: append($transitions, #{$prop} $anim-fast $anim-easing, comma);
+  }
+  transition: $transitions;
+}
+
+@mixin transition-base($properties...) {
+  $transitions: ();
+  @each $prop in $properties {
+    $transitions: append($transitions, #{$prop} $anim-base $anim-easing, comma);
+  }
+  transition: $transitions;
+}
+
+@mixin transition-slow($properties...) {
+  $transitions: ();
+  @each $prop in $properties {
+    $transitions: append($transitions, #{$prop} $anim-slow $anim-easing, comma);
+  }
+  transition: $transitions;
+}
+
+// Specific Hover Effects
+@mixin card-hover-transition {
+  transition: box-shadow $anim-fast $anim-easing,
+              transform $anim-fast $anim-easing;
+}
+
+@mixin link-hover-transition {
+  transition: color $anim-fast $anim-easing;
+}
+
+@mixin button-hover-transition {
+  transition: background-color $anim-fast $anim-easing,
+              box-shadow $anim-fast $anim-easing,
+              transform $anim-fast $anim-easing;
+}
+
+// Keyframe Animations
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Animation Utility Mixins
+@mixin animate-fade-in {
+  animation: fade-in $anim-base $anim-easing;
+}
+
+@mixin animate-slide-up {
+  animation: slide-up $anim-base $anim-easing;
+}
+
+@mixin animate-scale-in {
+  animation: scale-in $anim-base $anim-easing;
+}

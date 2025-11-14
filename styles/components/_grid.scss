@@ -1,0 +1,98 @@
+// =============================================================================
+// GRID LAYOUT COMPONENT - Tailark Pro Design System
+// =============================================================================
+// Responsive grid system for cards and content
+// Mobile-first: stacked → 2-col → 3-col
+// =============================================================================
+
+@import '../tokens/spacing';
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include grid-gap;
+
+  // 2-column grid (testimonials, case studies)
+  &--cols-2 {
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // 3-column grid (features, metrics)
+  &--cols-3 {
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // 4-column grid (small cards)
+  &--cols-4 {
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  // Gap Variants
+  &--gap-sm {
+    gap: $grid-gap-mobile;
+
+    @media (min-width: 1024px) {
+      gap: 1.5rem;
+    }
+  }
+
+  &--gap-lg {
+    gap: 1.5rem;
+
+    @media (min-width: 1024px) {
+      gap: 3rem;
+    }
+  }
+
+  // Container Query Support for Premium Grids
+  &--premium-2col {
+    @container (min-width: 1280px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--testimonials {
+    @container (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// Grid Item Utilities
+.grid__item {
+  // Alternating layout for testimonials
+  &--alternate-right {
+    @media (min-width: 768px) {
+      &:nth-child(odd) {
+        transform: translateX(1rem);
+      }
+    }
+  }
+
+  // Full width on mobile, half on desktop
+  &--span-2 {
+    @media (min-width: 768px) {
+      grid-column: span 2;
+    }
+  }
+
+  &--span-3 {
+    @media (min-width: 1024px) {
+      grid-column: span 3;
+    }
+  }
+}

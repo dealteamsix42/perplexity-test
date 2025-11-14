@@ -1,0 +1,52 @@
+// =============================================================================
+// DESIGN TOKENS INDEX - Tailark Pro Design System
+// =============================================================================
+// Master export file for all design tokens
+// Import this file to access the complete token system
+// =============================================================================
+
+@import 'colors';
+@import 'gradients';
+@import 'typography';
+@import 'spacing';
+@import 'shadows';
+@import 'radius';
+@import 'animations';
+
+// Global Base Styles
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-family);
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+}
+
+// Reset default margins for typography
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Focus visible for accessibility
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

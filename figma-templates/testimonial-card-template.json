@@ -1,0 +1,129 @@
+{
+  "name": "Testimonial Card Template",
+  "description": "Reusable testimonial structure for social media posts",
+  "version": "1.0.0",
+  "type": "component-set",
+  "variants": {
+    "platform": ["linkedin", "twitter", "instagram", "facebook"],
+    "gradient": ["purple-blue", "teal-navy"]
+  },
+  "structure": {
+    "layers": [
+      {
+        "name": "Background",
+        "type": "RECTANGLE",
+        "fills": [
+          {
+            "type": "GRADIENT_LINEAR",
+            "visible": true,
+            "gradientStops": [
+              { "color": { "r": 0, "g": 0.1, "b": 0.2, "a": 1 }, "position": 0 },
+              { "color": { "r": 0.118, "g": 0.106, "b": 0.294, "a": 1 }, "position": 0.5 },
+              { "color": { "r": 0.176, "g": 0.106, "b": 0.412, "a": 1 }, "position": 1 }
+            ],
+            "gradientTransform": [[0.707, -0.707, 0.5], [0.707, 0.707, 0]]
+          }
+        ],
+        "effects": [
+          {
+            "type": "DROP_SHADOW",
+            "visible": true,
+            "color": { "r": 0, "g": 0, "b": 0, "a": 0.15 },
+            "offset": { "x": 0, "y": 25 },
+            "radius": 50,
+            "spread": -12
+          }
+        ],
+        "cornerRadius": 24
+      },
+      {
+        "name": "Company Logo",
+        "type": "IMAGE",
+        "x": 60,
+        "y": 60,
+        "width": 160,
+        "height": 80,
+        "constraints": { "horizontal": "MIN", "vertical": "MIN" },
+        "placeholder": "company-logo.svg"
+      },
+      {
+        "name": "Metric Section",
+        "type": "FRAME",
+        "x": 60,
+        "y": 200,
+        "width": 400,
+        "height": 120,
+        "layoutMode": "VERTICAL",
+        "itemSpacing": 8,
+        "children": [
+          {
+            "name": "Metric Value",
+            "type": "TEXT",
+            "characters": "99.9%",
+            "fontSize": 60,
+            "fontWeight": 700,
+            "fills": [{ "type": "SOLID", "color": { "r": 0.078, "g": 0.722, "b": 0.651 } }],
+            "textCase": "ORIGINAL"
+          },
+          {
+            "name": "Metric Label",
+            "type": "TEXT",
+            "characters": "UPTIME GUARANTEE",
+            "fontSize": 14,
+            "fontWeight": 500,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.8 } }],
+            "textCase": "UPPER",
+            "letterSpacing": { "value": 5, "unit": "PERCENT" }
+          }
+        ]
+      },
+      {
+        "name": "Quote",
+        "type": "TEXT",
+        "x": 60,
+        "y": 360,
+        "width": "{{PLATFORM_WIDTH - 120}}",
+        "characters": "\"Insert customer testimonial quote here. This should be compelling and highlight key benefits.\"",
+        "fontSize": 18,
+        "lineHeight": { "value": 160, "unit": "PERCENT" },
+        "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.9 } }]
+      },
+      {
+        "name": "Author",
+        "type": "FRAME",
+        "x": 60,
+        "y": "{{PLATFORM_HEIGHT - 100}}",
+        "layoutMode": "VERTICAL",
+        "itemSpacing": 4,
+        "children": [
+          {
+            "name": "Author Name",
+            "type": "TEXT",
+            "characters": "John Doe",
+            "fontSize": 14,
+            "fontWeight": 600,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1 } }]
+          },
+          {
+            "name": "Author Title",
+            "type": "TEXT",
+            "characters": "CTO, Company Name",
+            "fontSize": 14,
+            "fontWeight": 400,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.7 } }]
+          }
+        ]
+      }
+    ]
+  },
+  "autoLayout": {
+    "mode": "VERTICAL",
+    "primaryAxisSizingMode": "FIXED",
+    "counterAxisSizingMode": "FIXED",
+    "paddingLeft": 60,
+    "paddingRight": 60,
+    "paddingTop": 60,
+    "paddingBottom": 60,
+    "itemSpacing": 32
+  }
+}

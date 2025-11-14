@@ -1,0 +1,104 @@
+{
+  "name": "Before/After Comparison Template",
+  "description": "Split screen comparison layout for showing transformation",
+  "version": "1.0.0",
+  "type": "component",
+  "structure": {
+    "layoutMode": "HORIZONTAL",
+    "children": [
+      {
+        "name": "Before Section",
+        "type": "FRAME",
+        "width": "50%",
+        "fills": [{ "type": "SOLID", "color": { "r": 0.976, "g": 0.98, "b": 0.988 } }],
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "paddingLeft": 40,
+        "paddingRight": 40,
+        "paddingTop": 60,
+        "paddingBottom": 60,
+        "itemSpacing": 24,
+        "children": [
+          {
+            "name": "Label",
+            "type": "TEXT",
+            "characters": "BEFORE",
+            "fontSize": 12,
+            "fontWeight": 600,
+            "textCase": "UPPER",
+            "letterSpacing": { "value": 5, "unit": "PERCENT" },
+            "fills": [{ "type": "SOLID", "color": { "r": 0.392, "g": 0.455, "b": 0.545 } }]
+          },
+          {
+            "name": "Problem Statement",
+            "type": "TEXT",
+            "characters": "Problem or pain point description",
+            "fontSize": 18,
+            "lineHeight": { "value": 150, "unit": "PERCENT" },
+            "textAlignHorizontal": "CENTER",
+            "fills": [{ "type": "SOLID", "color": { "r": 0.059, "g": 0.09, "b": 0.165 } }]
+          }
+        ]
+      },
+      {
+        "name": "Divider",
+        "type": "LINE",
+        "strokeWeight": 2,
+        "strokes": [{ "type": "SOLID", "color": { "r": 0.145, "g": 0.380, "b": 0.922 } }]
+      },
+      {
+        "name": "After Section",
+        "type": "FRAME",
+        "width": "50%",
+        "fills": [
+          {
+            "type": "GRADIENT_LINEAR",
+            "gradientStops": [
+              { "color": { "r": 0, "g": 0.1, "b": 0.2, "a": 1 }, "position": 0 },
+              { "color": { "r": 0.118, "g": 0.106, "b": 0.294, "a": 1 }, "position": 1 }
+            ],
+            "gradientTransform": [[0.707, -0.707, 0.5], [0.707, 0.707, 0]]
+          }
+        ],
+        "layoutMode": "VERTICAL",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": "CENTER",
+        "paddingLeft": 40,
+        "paddingRight": 40,
+        "paddingTop": 60,
+        "paddingBottom": 60,
+        "itemSpacing": 24,
+        "children": [
+          {
+            "name": "Label",
+            "type": "TEXT",
+            "characters": "AFTER",
+            "fontSize": 12,
+            "fontWeight": 600,
+            "textCase": "UPPER",
+            "letterSpacing": { "value": 5, "unit": "PERCENT" },
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.8 } }]
+          },
+          {
+            "name": "Metric",
+            "type": "TEXT",
+            "characters": "65%",
+            "fontSize": 48,
+            "fontWeight": 700,
+            "fills": [{ "type": "SOLID", "color": { "r": 0.078, "g": 0.722, "b": 0.651 } }]
+          },
+          {
+            "name": "Solution Result",
+            "type": "TEXT",
+            "characters": "Improvement or result description",
+            "fontSize": 18,
+            "lineHeight": { "value": 150, "unit": "PERCENT" },
+            "textAlignHorizontal": "CENTER",
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.9 } }]
+          }
+        ]
+      }
+    ]
+  }
+}

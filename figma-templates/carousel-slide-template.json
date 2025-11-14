@@ -1,0 +1,159 @@
+{
+  "name": "Carousel Slide Template",
+  "description": "Multi-slide case study carousel structure (3 slides: Challenge → Solution → Result)",
+  "version": "1.0.0",
+  "type": "component-set",
+  "slideCount": 3,
+  "slides": [
+    {
+      "name": "Slide 1 - Challenge",
+      "slide": 1,
+      "structure": {
+        "background": {
+          "type": "SOLID",
+          "color": { "r": 0, "g": 0.1, "b": 0.2, "a": 1 }
+        },
+        "layers": [
+          {
+            "name": "Slide Number",
+            "type": "TEXT",
+            "x": 40,
+            "y": 40,
+            "characters": "1/3",
+            "fontSize": 14,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.6 } }]
+          },
+          {
+            "name": "Heading",
+            "type": "TEXT",
+            "x": 60,
+            "y": "{{HEIGHT / 3}}",
+            "characters": "The Challenge",
+            "fontSize": 32,
+            "fontWeight": 600,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1 } }]
+          },
+          {
+            "name": "Description",
+            "type": "TEXT",
+            "x": 60,
+            "y": "{{HEIGHT / 3 + 80}}",
+            "width": "{{WIDTH - 120}}",
+            "characters": "Describe the customer's challenge or pain point here.",
+            "fontSize": 18,
+            "lineHeight": { "value": 160, "unit": "PERCENT" },
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.9 } }]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Slide 2 - Solution",
+      "slide": 2,
+      "structure": {
+        "background": {
+          "type": "SOLID",
+          "color": { "r": 0.118, "g": 0.161, "b": 0.231, "a": 1 }
+        },
+        "layers": [
+          {
+            "name": "Slide Number",
+            "type": "TEXT",
+            "x": 40,
+            "y": 40,
+            "characters": "2/3",
+            "fontSize": 14,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.6 } }]
+          },
+          {
+            "name": "Heading",
+            "type": "TEXT",
+            "x": 60,
+            "y": "{{HEIGHT / 3}}",
+            "characters": "The Solution",
+            "fontSize": 32,
+            "fontWeight": 600,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1 } }]
+          },
+          {
+            "name": "Description",
+            "type": "TEXT",
+            "x": 60,
+            "y": "{{HEIGHT / 3 + 80}}",
+            "width": "{{WIDTH - 120}}",
+            "characters": "Explain how your product/service solved the challenge.",
+            "fontSize": 18,
+            "lineHeight": { "value": 160, "unit": "PERCENT" },
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.9 } }]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Slide 3 - Result",
+      "slide": 3,
+      "structure": {
+        "background": {
+          "type": "GRADIENT_LINEAR",
+          "gradientStops": [
+            { "color": { "r": 0.118, "g": 0.106, "b": 0.294, "a": 1 }, "position": 0 },
+            { "color": { "r": 0.176, "g": 0.106, "b": 0.412, "a": 1 }, "position": 1 }
+          ],
+          "gradientTransform": [[0.707, -0.707, 0.5], [0.707, 0.707, 0]]
+        },
+        "layers": [
+          {
+            "name": "Slide Number",
+            "type": "TEXT",
+            "x": 40,
+            "y": 40,
+            "characters": "3/3",
+            "fontSize": 14,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.6 } }]
+          },
+          {
+            "name": "Heading",
+            "type": "TEXT",
+            "x": 60,
+            "y": "{{HEIGHT / 3}}",
+            "characters": "The Result",
+            "fontSize": 32,
+            "fontWeight": 600,
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1 } }]
+          },
+          {
+            "name": "Metric",
+            "type": "TEXT",
+            "x": 60,
+            "y": "{{HEIGHT / 3 + 80}}",
+            "characters": "65%",
+            "fontSize": 64,
+            "fontWeight": 700,
+            "fills": [{ "type": "SOLID", "color": { "r": 0.078, "g": 0.722, "b": 0.651 } }]
+          },
+          {
+            "name": "Result Description",
+            "type": "TEXT",
+            "x": 60,
+            "y": "{{HEIGHT / 3 + 180}}",
+            "width": "{{WIDTH - 120}}",
+            "characters": "Describe the quantifiable result and impact.",
+            "fontSize": 18,
+            "lineHeight": { "value": 160, "unit": "PERCENT" },
+            "fills": [{ "type": "SOLID", "color": { "r": 1, "g": 1, "b": 1, "a": 0.9 } }]
+          },
+          {
+            "name": "CTA",
+            "type": "TEXT",
+            "x": 60,
+            "y": "{{HEIGHT - 100}}",
+            "characters": "Read full story →",
+            "fontSize": 16,
+            "fontWeight": 600,
+            "fills": [{ "type": "SOLID", "color": { "r": 0.078, "g": 0.722, "b": 0.651 } }]
+          }
+        ]
+      }
+    }
+  ]
+}

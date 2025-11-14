@@ -1,0 +1,152 @@
+// =============================================================================
+// BUTTON COMPONENT - Tailark Pro Design System
+// =============================================================================
+// CTA buttons with variants
+// Usage: <button class="btn btn--primary">...</button>
+// =============================================================================
+
+@import '../tokens/colors';
+@import '../tokens/spacing';
+@import '../tokens/radius';
+@import '../tokens/typography';
+@import '../tokens/shadows';
+@import '../tokens/animations';
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: $space-3 $space-6;
+  font-size: $text-base;
+  font-weight: $font-semibold;
+  font-family: inherit;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  @include rounded-md;
+  cursor: pointer;
+  @include button-hover-transition;
+  min-height: 2.75rem; // 44px for accessibility
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Icon sizing
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+// Primary Button
+.btn--primary {
+  background-color: $primary;
+  color: white;
+  box-shadow: $shadow-sm;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-hover;
+    box-shadow: $shadow-md;
+    transform: translateY(-1px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+// Secondary Button (outlined)
+.btn--secondary {
+  background-color: transparent;
+  color: $primary;
+  border: 2px solid $primary;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($primary, 0.05);
+  }
+
+  &:active:not(:disabled) {
+    background-color: rgba($primary, 0.1);
+  }
+}
+
+// Accent Button (teal)
+.btn--accent {
+  background-color: $accent-teal;
+  color: white;
+  box-shadow: $shadow-sm;
+
+  &:hover:not(:disabled) {
+    background-color: darken($accent-teal, 10%);
+    box-shadow: $shadow-md;
+  }
+}
+
+// Ghost Button (minimal)
+.btn--ghost {
+  background-color: transparent;
+  color: $fg;
+
+  &:hover:not(:disabled) {
+    background-color: $neutral-100;
+  }
+}
+
+// Button Sizes
+.btn--sm {
+  padding: $space-2 $space-4;
+  font-size: $text-sm;
+  min-height: 2rem;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.btn--lg {
+  padding: $space-4 $space-8;
+  font-size: $text-lg;
+  min-height: 3.5rem;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+// Full Width Button
+.btn--full {
+  width: 100%;
+}
+
+// Icon Only Button
+.btn--icon {
+  padding: $space-3;
+  aspect-ratio: 1;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+// Button Group
+.btn-group {
+  display: flex;
+  gap: $space-3;
+  flex-wrap: wrap;
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+}

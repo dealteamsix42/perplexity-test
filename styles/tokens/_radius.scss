@@ -1,0 +1,57 @@
+// =============================================================================
+// BORDER RADIUS TOKENS - Tailark Pro Design System
+// =============================================================================
+// Rounded corners for cards, buttons, and UI elements
+// =============================================================================
+
+:root {
+  --radius-sm: 0.375rem;  // 6px - small elements
+  --radius-md: 0.5rem;    // 8px - buttons
+  --radius-lg: 0.75rem;   // 12px - cards
+  --radius-xl: 1rem;      // 16px - premium cards
+  --radius-2xl: 1.5rem;   // 24px - hero cards
+  --radius-full: 9999px;  // circular
+}
+
+// SCSS Variables
+$radius-sm: 0.375rem;
+$radius-md: 0.5rem;
+$radius-lg: 0.75rem;
+$radius-xl: 1rem;
+$radius-2xl: 1.5rem;
+$radius-full: 9999px;
+
+// Radius Map
+$radius-scale: (
+  'sm': $radius-sm,
+  'md': $radius-md,
+  'lg': $radius-lg,
+  'xl': $radius-xl,
+  '2xl': $radius-2xl,
+  'full': $radius-full,
+);
+
+// Radius Mixins
+@mixin rounded-sm {
+  border-radius: $radius-sm;
+}
+
+@mixin rounded-md {
+  border-radius: $radius-md;
+}
+
+@mixin rounded-lg {
+  border-radius: $radius-lg;
+}
+
+@mixin rounded-xl {
+  border-radius: $radius-xl;
+}
+
+@mixin rounded-2xl {
+  border-radius: $radius-2xl;
+}
+
+@mixin rounded-full {
+  border-radius: $radius-full;
+}
