@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "title": "Social Media & Visual Content Framework",
+    "description": "Complete guide for creating consistent social media visuals using the Tailark Pro design system",
+    "design_system_reference": "design.json (Tailark Pro Grid Customers)",
+    "tools_integrated_with": ["Figma", "Canva", "Adobe Express", "v0.dev", "Cursor"],
+    "platforms_covered": ["LinkedIn", "Twitter/X", "Instagram", "Facebook", "TikTok", "Email"]
+  },
+  "visual_frameworks": {
+    "testimonial_card_social": {
+      "purpose": "Extract hero testimonials into shareable social posts",
+      "layout": "Card-based with company logo, metric highlight, and quote",
+      "dimensions": {"linkedin": "1200x627px", "twitter": "1024x512px", "instagram": "1080x1080px"},
+      "design_elements": {
+        "background": "Use dark premium gradient (dark-purple-blue or dark-teal-navy)",
+        "border": "Subtle white border at 10% opacity",
+        "text_color": "white for testimonial text",
+        "metric_highlight": "Large percentage or statistic in accent color (#14B8A6 teal or #A855F7 purple)",
+        "logo": "40-80px width, top-left or centered",
+        "cta_element": "'Read full story' link or arrow to case study URL"
+      }
+    },
+    "metric_highlight_card": {
+      "purpose": "Standalone metric visualization for engagement",
+      "focus": "Single metric (99.9%, 24/7, 62% reduction) with supporting context",
+      "dimensions": {"square": "1080x1080px", "vertical": "1080x1350px", "horizontal": "1200x630px"},
+      "design_approach": {
+        "metric_size": "80-120px bold font",
+        "background": "Gradient overlay (teal or purple)",
+        "supporting_text": "2-3 lines max explaining context",
+        "brand_placement": "Company logo top-right",
+        "call_to_action": "Subtle 'Learn how' or URL at bottom"
+      }
+    },
+    "case_study_carousel": {
+      "purpose": "Multi-slide social carousel highlighting customer journey",
+      "slides": 3,
+      "slide_structure": ["Challenge + company", "Solution + metric", "Result + CTA"],
+      "design_continuity": {
+        "slide_1": "Problem statement in dark gradient background",
+        "slide_2": "Solution with before/after comparison",
+        "slide_3": "Key result metric + 'Read story' CTA",
+        "consistent_palette": "All slides use same color system (primary blue #2563EB, accents)"
+      }
+    },
+    "feature_highlight": {
+      "purpose": "Showcase specific capabilities (99.9% uptime, 24/7 support)",
+      "layout": "Icon + metric + description",
+      "design_pattern": {
+        "icon": "24x24 or 32x32px, accent color",
+        "metric": "Large, semibold, primary text color",
+        "label": "Small caps or regular sm text",
+        "background": "Light background (#F9FAFB) or subtle gradient",
+        "border_accent": "Thin accent line (teal or purple)"
+      }
+    }
+  },
+  "platform_specific_guidelines": {
+    "linkedin": {
+      "optimal_dimensions": "1200x627px or 1200x1500px (carousel)",
+      "tone": "Professional, data-driven, enterprise-focused",
+      "content_types": ["Case study cards", "Customer testimonials", "Metric highlights", "thought leadership"],
+      "color_usage": "Dark premium cards for impact, light cards for contrast",
+      "text_strategy": "Headline + 2-3 line description + link",
+      "hashtag_approach": "3-5 relevant hashtags, industry-specific",
+      "cta_guidance": "'Read story' or 'Learn how' + direct URL"
+    },
+    "twitter_x": {
+      "optimal_dimensions": "1024x512px (image) or 1200x675px",
+      "tone": "Punchy, metric-driven, conversational",
+      "content_types": ["Single metric highlights", "Quick wins", "Result snippets"],
+      "format_recommendation": "Quote card + metric visual",
+      "character_limit": "280 chars including link",
+      "visual_focus": "Bold metric number + supporting statement",
+      "thread_potential": "Multi-tweet customer journey (slide 1→2→3)"
+    },
+    "instagram": {
+      "optimal_dimensions": "1080x1080px (post) or 1080x1350px (portrait)",
+      "tone": "Aspirational, visual-first, modern",
+      "content_types": ["Metric highlight cards", "Customer stories", "Behind-the-scenes"],
+      "design_approach": "Bold gradients + large metrics + minimal text",
+      "color_palette": "Use purple (#A855F7) and teal (#14B8A6) accents for visual pop",
+      "typography_hierarchy": "80px metric, 24px supporting text",
+      "caption_strategy": "Emoji-friendly, 150-200 char description + call-to-action",
+      "stories_format": "Full-bleed gradient background, stacked text, 15-20px safe margins"
+    },
+    "facebook": {
+      "optimal_dimensions": "1200x628px or 1200x1500px",
+      "tone": "Community-focused, trustworthy, inclusive",
+      "content_types": ["Testimonial cards", "Customer success stories", "Team culture"],
+      "design_consideration": "Works well with light backgrounds + company logos",
+      "text_on_image_limit": "Keep text under 20% of image area for better reach",
+      "engagement_hooks": "Questions, polls about customer benefits"
+    },
+    "tiktok": {
+      "optimal_dimensions": "1080x1920px (vertical, full screen)",
+      "tone": "Energetic, trend-aware, authentic",
+      "content_types": ["Speed runs of metrics", "Customer testimonial clips", "Day-in-the-life"],
+      "video_consideration": "Animated metric counters (0→99.9%)",
+      "design_animation": "Gradient fade-ins, text reveal animations",
+      "sound_design": "Match edits to trending audio",
+      "pacing": "3-5 second scenes, rapid cuts for engagement"
+    },
+    "email": {
+      "optimal_dimensions": "600px width (responsive), 800px max",
+      "tone": "Direct, conversion-focused, personalized",
+      "card_style": "Use light testimonial cards with subtle borders",
+      "metric_callout": "Highlight key result in email body",
+      "cta_button": "Styled with primary blue (#2563EB), 44px minimum height",
+      "responsive_behavior": "Single column on mobile, cards stack vertically"
+    }
+  },
+  "content_templates": {
+    "template_1_customer_win": {
+      "structure": "[Company Logo] + [Metric Impact] + [Quote] + [CTA]",
+      "example": "Stripe logo + '65% Faster' + 'Prime implemented our streaming optimization suite...' + 'Read Story'",
+      "visual_breakdown": {
+        "section_1": "Logo area: 60x40px, top padding 20px",
+        "section_2": "Metric: 80px bold, primary color, center-top",
+        "section_3": "Testimonial: 16px regular, white text, 30px line height",
+        "section_4": "CTA link: 14px semibold, teal accent color"
+      }
+    },
+    "template_2_before_after": {
+      "structure": "[Split screen] Left: Problem | Right: Solution + Metric",
+      "visual_approach": {
+        "left_half": "Problem statement on light background (#F9FAFB)",
+        "right_half": "Solution + metric on dark gradient background",
+        "visual_separator": "Thin primary blue line",
+        "metric_emphasis": "Large, center-aligned, high contrast"
+      }
+    },
+    "template_3_testimonial_highlight": {
+      "structure": "[Dark card with gradient] [Logo top] [Metric + Quote] [2 Supporting metrics bottom]",
+      "use_case": "LinkedIn carousel slides, email feature sections",
+      "layout": "Vertical card, 400-500px height, metrics in grid at bottom"
+    },
+    "template_4_metric_callout": {
+      "structure": "[Large number] [Context line] [Brand element]",
+      "variations": ["99.9% Uptime Guarantee", "24/7 Support Available", "62% Buffering Reduction"],
+      "design_flexibility": "Works as square, vertical, or horizontal post"
+    }
+  },
+  "color_application_by_context": {
+    "primary_metric_highlight": "Use #14B8A6 teal for key performance indicators",
+    "secondary_emphasis": "Use #A855F7 purple for supporting metrics or CTA",
+    "background_dark_posts": "Use dark-purple-blue or dark-teal-navy gradients",
+    "background_light_posts": "Use #FFFFFF or #F9FAFB for contrast",
+    "text_on_dark": "Use white (text-white) with 80% opacity for secondary text",
+    "text_on_light": "Use #0F172A for headings, #64748B for body"
+  },
+  "typography_for_social": {
+    "headline_metric": "Inter 60-120px, weight 700, semibold text color",
+    "supporting_text": "Inter 16-18px, weight 400, line-height 1.6",
+    "small_details": "Inter 12-14px, weight 500, muted color",
+    "cta_text": "Inter 14px, weight 600, accent color, uppercase optional"
+  },
+  "generation_workflow": {
+    "step_1_extract_data": "Pull metric, quote, company name from customer data",
+    "step_2_choose_template": "Select template based on platform (carousel, single card, etc.)",
+    "step_3_apply_colors": "Apply color scheme from design.json color_system",
+    "step_4_set_typography": "Use typography scales for visual hierarchy",
+    "step_5_add_logo": "Place company logo with 20-30px margins",
+    "step_6_export_formats": "Export for each platform (1200x627 LinkedIn, 1080x1080 Instagram, etc.)",
+    "step_7_add_captions": "Write platform-specific captions and CTAs",
+    "step_8_schedule": "Use scheduling tool to batch-post across platforms"
+  },
+  "design_system_integration": {
+    "from_design_json_use": ["Color palette (neutral scale, brand colors, gradients)", "Typography scales (font sizes, weights, line heights)", "Spacing system (margins, padding, grid gaps)", "Shadow system (for card depth)", "Border radius (rounded corners 0.75rem)", "Animation durations (200-300ms transitions)"],
+    "maintain_consistency": "All social media visuals should reference color_system and typography sections from design.json",
+    "scalability": "Templates can be programmatically generated from customer data JSON using Figma API or v0.dev"
+  }
+}

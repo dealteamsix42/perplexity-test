@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "name": "Tailark Pro - Grid Customers Design System",
+    "version": "1.0.0",
+    "description": "Enterprise-grade design system for customer testimonials and case studies grid layout. Complete specification for AI-assisted development in Relume, Cursor, and v0.dev.",
+    "created": "2025-11-14",
+    "framework": "Next.js 14+ with React",
+    "styling": "Tailwind CSS v3.4+",
+    "target_tools": ["Relume", "Cursor", "v0.dev"],
+    "use_case": "B2B SaaS testimonial galleries with premium dark case studies and light testimonial cards"
+  },
+  "design_philosophy": {
+    "core_principles": [
+      "Premium minimalism - elegant simplicity with intentional whitespace",
+      "Accessibility first - WCAG AAA compliance, semantic HTML, keyboard navigation",
+      "Mobile-first responsive - progressive enhancement from single-column to multi-column",
+      "Modular hierarchy - Container → Section → Card → Element structure",
+      "Dark-first content - premium dark gradients for case studies, clean light cards for testimonials",
+      "Visual storytelling - metric + narrative + CTA pattern for engagement"
+    ],
+    "target_audience": "Enterprise decision-makers, technical founders, CTOs, product leaders",
+    "emotional_response": "Trust, innovation, scale, premium quality, social proof",
+    "visual_language": "Clean, modern B2B SaaS with premium dark-themed hero cards and minimal light testimonial cards"
+  },
+  "color_system": {
+    "palette": {
+      "neutral": {
+        "50": "#F8FAFC",
+        "100": "#F1F5F9",
+        "200": "#E2E8F0",
+        "300": "#CBD5E1",
+        "400": "#94A3B8",
+        "500": "#64748B",
+        "600": "#475569",
+        "700": "#334155",
+        "800": "#1E293B",
+        "900": "#0F172A"
+      },
+      "semantic": {
+        "background": "#FFFFFF",
+        "background_secondary": "#F9FAFB",
+        "foreground": "#0F172A",
+        "muted": "#64748B",
+        "muted_lighter": "#94A3B8",
+        "border": "#E2E8F0",
+        "border_dark": "#334155"
+      },
+      "brand": {
+        "primary_blue": "#2563EB",
+        "primary_hover": "#1D4ED8",
+        "accent_teal": "#14B8A6",
+        "accent_purple": "#A855F7"
+      }
+    },
+    "gradients": {
+      "dark_purple_blue": {
+        "description": "Premium case study card gradient",
+        "stops": ["#001A33", "#1E1B4B", "#2D1B69"],
+        "angle": "135deg",
+        "mask": "mask-y-from-25% creates depth effect"
+      },
+      "dark_teal_navy": {
+        "description": "Alternative premium dark gradient",
+        "stops": ["#0D3A3A", "#1E3A3A", "#1E293B"],
+        "angle": "135deg"
+      }
+    }
+  },
+  "typography": {
+    "font_stack": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif",
+    "scales": {
+      "xs": {"size": "0.75rem", "weight": 500, "line_height": 1.4, "use": "captions, badges"},
+      "sm": {"size": "0.875rem", "weight": 400, "line_height": 1.5, "use": "secondary text"},
+      "base": {"size": "1rem", "weight": 400, "line_height": 1.6, "use": "body text"},
+      "lg": {"size": "1.125rem", "weight": 400, "line_height": 1.75, "use": "large body"},
+      "xl": {"size": "1.25rem", "weight": 500, "line_height": 1.5, "use": "card titles"},
+      "2xl": {"size": "1.5rem", "weight": 600, "line_height": 1.4, "use": "headings"},
+      "3xl": {"size": "2rem", "weight": 600, "line_height": 1.3, "use": "large headings"},
+      "5xl": {"size": "3rem", "weight": 600, "line_height": 1.1, "letter_spacing": "-0.02em", "use": "hero headings"},
+      "6xl": {"size": "3.75rem", "weight": 700, "line_height": 1, "letter_spacing": "-0.03em", "use": "max impact"}
+    },
+    "font_weights": {"light": 300, "normal": 400, "medium": 500, "semibold": 600, "bold": 700},
+    "responsive_behavior": "Mobile uses smaller sizes, desktop uses larger. Hero: 2rem mobile → 3rem desktop"
+  },
+  "spacing": {
+    "base_unit": "4px (0.25rem)",
+    "layout_spacing": {
+      "section_padding_y": "6rem desktop, 4rem mobile",
+      "section_padding_x": "1.5rem",
+      "container_max_width": "80rem (1280px)",
+      "grid_gap": "2rem desktop, 1rem mobile",
+      "card_padding": "2rem"
+    }
+  },
+  "shadows": {
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+    "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+    "usage": "Cards default to shadow-md, hover to shadow-xl or shadow-2xl"
+  },
+  "border_radius": {
+    "sm": "0.375rem",
+    "md": "0.5rem",
+    "lg": "0.75rem",
+    "xl": "1rem"
+  },
+  "animations": {
+    "durations": {"fast": "200ms", "base": "300ms", "slow": "500ms"},
+    "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "hover_effects": {
+      "card_hover": "shadow and transform on 200ms",
+      "link_hover": "text-primary transition on 200ms"
+    }
+  },
+  "components": {
+    "Container": {
+      "purpose": "Wraps all content with max-width and horizontal padding",
+      "class": "mx-auto max-w-5xl px-6",
+      "max_width": "80rem",
+      "padding_x": "1.5rem",
+      "children_spacing": "border-x px-2 lg:px-6"
+    },
+    "Section": {
+      "purpose": "Full-width section with vertical spacing",
+      "id_usage": "For navigation anchors",
+      "background_options": ["bg-white", "bg-muted/50", "transparent"],
+      "padding_vertical": "py-12 sm:py-16 md:py-20 lg:py-24",
+      "children": ["Container", "Heading", "Subheading", "Content"]
+    },
+    "HeroSection": {
+      "structure": {
+        "heading": "h1 with text-5xl sm:text-6xl lg:text-7xl font-semibold",
+        "subheading": "p with text-lg text-muted-foreground mt-4",
+        "description": "p with max-w-xl mx-auto text-muted-foreground"
+      },
+      "text_balance": true,
+      "text_center": true,
+      "layout": "max-w-2xl mx-auto"
+    },
+    "CardDarkPremium": {
+      "purpose": "High-impact case study card with gradient background",
+      "background": "linear-gradient(135deg, ...gradient_stops)",
+      "border": "1px solid rgba(255, 255, 255, 0.1)",
+      "border_radius": "rounded-2xl",
+      "padding": "2rem",
+      "shadow": "shadow-xl",
+      "hover_state": "hover:shadow-2xl group-hover:scale-[1.02]",
+      "overlay_mask": "mask-y-from-25% for depth",
+      "content": {
+        "logo": {"mb": "2rem", "height": "h-8", "width": "w-36 or w-16"},
+        "metric_section": {"layout": "grid grid-cols-2 gap-6", "position": "bottom"},
+        "cta_link": {"text": "Read Story", "icon": "ChevronRight"}
+      }
+    },
+    "CardLightTestimonial": {
+      "purpose": "Clean testimonial card with light background",
+      "background": "#FFFFFF",
+      "border": "1px solid #E2E8F0",
+      "border_radius": "rounded-2xl",
+      "padding": "2rem",
+      "shadow": "shadow-md",
+      "hover_state": "hover:shadow-xl hover:border-primary/20",
+      "group_styling": "group-odd/item alternates left-right placement"
+    },
+    "GridLayout": {
+      "main_customers": {
+        "grid_cols": "@4xl:grid-cols-2",
+        "gap": "gap-4",
+        "responsive": "stacked mobile, 2-col on 4xl+"
+      },
+      "testimonials_grid": {
+        "grid_cols": "@3xl:grid-cols-2",
+        "gap": "gap-6",
+        "alternating": "group-odd/item:right-0 creates diagonal flow",
+        "border_connection": "Cards connect via borders"
+      }
+    }
+  },
+  "responsive_design": {
+    "mobile_first": true,
+    "breakpoints": {"mobile": "0px", "sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px"},
+    "key_rules": ["Single column on mobile", "2-col grids on 640px+", "Full features on 1024px+", "Touch areas min 44x44px", "Container queries: @3xl, @4xl"]
+  },
+  "accessibility": {
+    "wcag": "AAA compliant",
+    "semantic_html": ["section", "article", "nav", "header", "footer"],
+    "focus_rings": true,
+    "keyboard_nav": true,
+    "color_contrast": "7:1 minimum"
+  },
+  "ai_implementation": {
+    "relume_workflow": ["Create Section + Container", "Build hero with h1 text-5xl sm:text-6xl", "Create @4xl:grid-cols-2 for dark cards", "Build cards with gradients", "Create @3xl:grid-cols-2 for testimonials"],
+    "cursor_approach": ["Use Tailwind utilities", "Apply responsive modifiers sm: md: lg: xl:", "Use group-hover for interactions", "Import from @/components/ui"],
+    "v0_strategy": ["React + Tailwind CSS", "CSS Grid for layout", "Gradient backgrounds", "Smooth transitions 200ms"]
+  }
+}
