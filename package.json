@@ -1,0 +1,30 @@
+{
+  "name": "design-system-orchestrator",
+  "version": "1.0.0",
+  "description": "Design system orchestrator for multi-platform social media content generation",
+  "main": "dist/main-orchestrator.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main-orchestrator.js",
+    "dev": "ts-node src/main-orchestrator.ts",
+    "test": "jest"
+  },
+  "keywords": ["design-system", "orchestration", "social-media", "figma", "notion"],
+  "author": "Deal Team Six",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "commander": "^11.0.0",
+    "dotenv": "^16.0.0",
+    "@notionhq/client": "^2.2.0",
+    "winston": "^3.8.0",
+    "@figma/rest-api-client": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0"
+  }
+}
